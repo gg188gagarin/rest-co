@@ -17,7 +17,7 @@ export const HomePage = () => {
     const [countries, setCountries] = useState([]);
     const [fixedCountries, setFixedCountries] = useState([]);
 
-    const {navigate} = useNavigate();
+    const navigate = useNavigate();
 
     console.log(countries);
 
