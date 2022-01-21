@@ -17,7 +17,7 @@ export const HomePage = () => {
     const [countries, setCountries] = useState([]);
     const [fixedCountries, setFixedCountries] = useState([]);
 
-    const {navigate} = useNavigate();
+    const navigate = useNavigate();
 
     console.log(countries);
 
@@ -89,7 +89,7 @@ export const HomePage = () => {
                             return (
                                 <Card
                                     key={c.name}
-                                    onClick={ () => navigate(`/country/${c.name}`)}
+                                    onClick={ () => navigate (`/country/${c.name}`)}
                                     {...countryInfo} />
                             );
                         }
