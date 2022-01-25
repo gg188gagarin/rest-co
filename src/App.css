@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.cardfixer:hover {
+  display: block;
+  height: 5px;
+  width: 30px;
+}
+.cardfixer {
+  display: none;
+  height: 5px;
+  width: 30px;
+}

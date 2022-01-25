@@ -10,6 +10,7 @@ export const Details = () => {
     const { name } = useParams();
     const { push, goBack } = useNavigate();
     const [country, setCountry] = useState(null);
+    const navigate = useNavigate();
 
     console.log(country);
 
@@ -19,7 +20,7 @@ export const Details = () => {
 
     return (
         <div>
-            <Button onClick={goBack}>
+            <Button onClick={() => navigate(-1)}>
                 <IoArrowBack /> Back
             </Button>
             {country && <Info push={push} {...country} />}

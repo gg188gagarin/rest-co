@@ -1,4 +1,7 @@
 import  styled from 'styled-components'
+import { CloseButton } from 'react-bootstrap';
+import {hover} from "@testing-library/user-event/dist/hover";
+import app from "../../src/App.css";
 
 const Wrapper = styled.article`
   border-radius: var(--radii);
@@ -37,19 +40,19 @@ const CardListItem = styled.li`
   font-weight: var(--fw-sm);
   line-height: 1.5;
   font-weight: var(--fw-light);
-  & > b {
-    font-weight: var(--fw-bold );
-  }
-  
+  & > b {font-weight: var(--fw-bold );}
 `;
 
 
-export const Card = ({ img, name,  info = [], onSelect, isSelected }) => {
+export const Card = ({ img, name,  info = [], onSelect, isSelected, onClick }) => {
     return (
-        <Wrapper  >
-            <CardImage src={img} alt={name}/>
+        <Wrapper>
+            <CardImage src={img} alt={name} onClick={onClick}/>
             <CardBody>
-                <input  type="checkbox" checked={isSelected} onChange={onSelect}/>
+                <div className={app.cardfixer}>
+
+                    <input  type="checkbox" checked={isSelected} onChange={onSelect}/>
+                </div>
                 <CardTitle>{name}</CardTitle>
                 <CardList>
                     {info.map((el) => (
@@ -59,7 +62,6 @@ export const Card = ({ img, name,  info = [], onSelect, isSelected }) => {
                     ))}
                 </CardList>
             </CardBody>
-
         </Wrapper>
     );
 };
