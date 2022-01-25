@@ -1,14 +1,11 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import {useState, useEffect} from "react";
 
-import { List } from '../components/List';
+import {List} from '../components/List';
 import {Card} from '../components/Card';
 import {Controls} from "../components/Controls";
 import {ALL_COUNTRIES, searchByCountry} from '../config';
-import { useNavigate } from 'react-router-dom';
-
-
-
+import {useNavigate} from 'react-router-dom';
 
 
 export const HomePage = () => {
@@ -59,10 +56,6 @@ export const HomePage = () => {
         }
     };
 
-
-
-
-
     return (
         <>
             <Controls onSearch={onSearch}/>
@@ -89,7 +82,7 @@ export const HomePage = () => {
                             return (
                                 <Card
                                     key={c.name}
-                                    onClick={ () => navigate (`/country/${c.name}`)}
+                                    onClick={() => navigate(`/country/${c.name}`)}
                                     {...countryInfo} />
                             );
                         }
